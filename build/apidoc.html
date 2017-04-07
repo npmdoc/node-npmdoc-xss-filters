@@ -1,0 +1,1594 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+        href="https://github.com/yahoo/xss-filters"
+
+    >xss-filters (v1.2.7)</a>
+</h1>
+<h4>Secure XSS Filters - Just sufficient output filtering to prevent XSS!</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.xss-filters">module xss-filters</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.xss-filters._getPrivFilters">
+            function <span class="apidocSignatureSpan">xss-filters.</span>_getPrivFilters
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.xss-filters.inDoubleQuotedAttr">
+            function <span class="apidocSignatureSpan">xss-filters.</span>inDoubleQuotedAttr
+            <span class="apidocSignatureSpan">(s)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.xss-filters.inHTMLComment">
+            function <span class="apidocSignatureSpan">xss-filters.</span>inHTMLComment
+            <span class="apidocSignatureSpan">(s)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.xss-filters.inHTMLData">
+            function <span class="apidocSignatureSpan">xss-filters.</span>inHTMLData
+            <span class="apidocSignatureSpan">(s)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.xss-filters.inSingleQuotedAttr">
+            function <span class="apidocSignatureSpan">xss-filters.</span>inSingleQuotedAttr
+            <span class="apidocSignatureSpan">(s)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.xss-filters.inUnQuotedAttr">
+            function <span class="apidocSignatureSpan">xss-filters.</span>inUnQuotedAttr
+            <span class="apidocSignatureSpan">(s)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.xss-filters.uriComponentInDoubleQuotedAttr">
+            function <span class="apidocSignatureSpan">xss-filters.</span>uriComponentInDoubleQuotedAttr
+            <span class="apidocSignatureSpan">(s)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.xss-filters.uriComponentInHTMLComment">
+            function <span class="apidocSignatureSpan">xss-filters.</span>uriComponentInHTMLComment
+            <span class="apidocSignatureSpan">(s)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.xss-filters.uriComponentInHTMLData">
+            function <span class="apidocSignatureSpan">xss-filters.</span>uriComponentInHTMLData
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.xss-filters.uriComponentInSingleQuotedAttr">
+            function <span class="apidocSignatureSpan">xss-filters.</span>uriComponentInSingleQuotedAttr
+            <span class="apidocSignatureSpan">(s)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.xss-filters.uriComponentInUnQuotedAttr">
+            function <span class="apidocSignatureSpan">xss-filters.</span>uriComponentInUnQuotedAttr
+            <span class="apidocSignatureSpan">(s)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.xss-filters.uriFragmentInDoubleQuotedAttr">
+            function <span class="apidocSignatureSpan">xss-filters.</span>uriFragmentInDoubleQuotedAttr
+            <span class="apidocSignatureSpan">(s)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.xss-filters.uriFragmentInHTMLComment">
+            function <span class="apidocSignatureSpan">xss-filters.</span>uriFragmentInHTMLComment
+            <span class="apidocSignatureSpan">(s)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.xss-filters.uriFragmentInHTMLData">
+            function <span class="apidocSignatureSpan">xss-filters.</span>uriFragmentInHTMLData
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.xss-filters.uriFragmentInSingleQuotedAttr">
+            function <span class="apidocSignatureSpan">xss-filters.</span>uriFragmentInSingleQuotedAttr
+            <span class="apidocSignatureSpan">(s)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.xss-filters.uriFragmentInUnQuotedAttr">
+            function <span class="apidocSignatureSpan">xss-filters.</span>uriFragmentInUnQuotedAttr
+            <span class="apidocSignatureSpan">(s)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.xss-filters.uriInDoubleQuotedAttr">
+            function <span class="apidocSignatureSpan">xss-filters.</span>uriInDoubleQuotedAttr
+            <span class="apidocSignatureSpan">(s)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.xss-filters.uriInHTMLComment">
+            function <span class="apidocSignatureSpan">xss-filters.</span>uriInHTMLComment
+            <span class="apidocSignatureSpan">(s)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.xss-filters.uriInHTMLData">
+            function <span class="apidocSignatureSpan">xss-filters.</span>uriInHTMLData
+            <span class="apidocSignatureSpan">(s)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.xss-filters.uriInSingleQuotedAttr">
+            function <span class="apidocSignatureSpan">xss-filters.</span>uriInSingleQuotedAttr
+            <span class="apidocSignatureSpan">(s)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.xss-filters.uriInUnQuotedAttr">
+            function <span class="apidocSignatureSpan">xss-filters.</span>uriInUnQuotedAttr
+            <span class="apidocSignatureSpan">(s)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.xss-filters.uriPathInDoubleQuotedAttr">
+            function <span class="apidocSignatureSpan">xss-filters.</span>uriPathInDoubleQuotedAttr
+            <span class="apidocSignatureSpan">(s)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.xss-filters.uriPathInHTMLComment">
+            function <span class="apidocSignatureSpan">xss-filters.</span>uriPathInHTMLComment
+            <span class="apidocSignatureSpan">(s)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.xss-filters.uriPathInHTMLData">
+            function <span class="apidocSignatureSpan">xss-filters.</span>uriPathInHTMLData
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.xss-filters.uriPathInSingleQuotedAttr">
+            function <span class="apidocSignatureSpan">xss-filters.</span>uriPathInSingleQuotedAttr
+            <span class="apidocSignatureSpan">(s)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.xss-filters.uriPathInUnQuotedAttr">
+            function <span class="apidocSignatureSpan">xss-filters.</span>uriPathInUnQuotedAttr
+            <span class="apidocSignatureSpan">(s)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.xss-filters.uriQueryInDoubleQuotedAttr">
+            function <span class="apidocSignatureSpan">xss-filters.</span>uriQueryInDoubleQuotedAttr
+            <span class="apidocSignatureSpan">(s)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.xss-filters.uriQueryInHTMLComment">
+            function <span class="apidocSignatureSpan">xss-filters.</span>uriQueryInHTMLComment
+            <span class="apidocSignatureSpan">(s)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.xss-filters.uriQueryInHTMLData">
+            function <span class="apidocSignatureSpan">xss-filters.</span>uriQueryInHTMLData
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.xss-filters.uriQueryInSingleQuotedAttr">
+            function <span class="apidocSignatureSpan">xss-filters.</span>uriQueryInSingleQuotedAttr
+            <span class="apidocSignatureSpan">(s)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.xss-filters.uriQueryInUnQuotedAttr">
+            function <span class="apidocSignatureSpan">xss-filters.</span>uriQueryInUnQuotedAttr
+            <span class="apidocSignatureSpan">(s)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">xss-filters.</span>_privFilters</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.xss-filters._privFilters">module xss-filters._privFilters</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.xss-filters._privFilters.d">
+            function <span class="apidocSignatureSpan">xss-filters._privFilters.</span>d
+            <span class="apidocSignatureSpan">(s, namedRefMap, reNamedRef, skipReplacement)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.xss-filters._privFilters.frCoPt">
+            function <span class="apidocSignatureSpan">xss-filters._privFilters.</span>frCoPt
+            <span class="apidocSignatureSpan">(num)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.xss-filters._privFilters.y">
+            function <span class="apidocSignatureSpan">xss-filters._privFilters.</span>y
+            <span class="apidocSignatureSpan">(s)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.xss-filters._privFilters.ya">
+            function <span class="apidocSignatureSpan">xss-filters._privFilters.</span>ya
+            <span class="apidocSignatureSpan">(s)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.xss-filters._privFilters.yavd">
+            function <span class="apidocSignatureSpan">xss-filters._privFilters.</span>yavd
+            <span class="apidocSignatureSpan">(s)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.xss-filters._privFilters.yavs">
+            function <span class="apidocSignatureSpan">xss-filters._privFilters.</span>yavs
+            <span class="apidocSignatureSpan">(s)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.xss-filters._privFilters.yavu">
+            function <span class="apidocSignatureSpan">xss-filters._privFilters.</span>yavu
+            <span class="apidocSignatureSpan">(s)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.xss-filters._privFilters.yc">
+            function <span class="apidocSignatureSpan">xss-filters._privFilters.</span>yc
+            <span class="apidocSignatureSpan">(s)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.xss-filters._privFilters.yced">
+            function <span class="apidocSignatureSpan">xss-filters._privFilters.</span>yced
+            <span class="apidocSignatureSpan">(s)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.xss-filters._privFilters.yces">
+            function <span class="apidocSignatureSpan">xss-filters._privFilters.</span>yces
+            <span class="apidocSignatureSpan">(s)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.xss-filters._privFilters.yceu">
+            function <span class="apidocSignatureSpan">xss-filters._privFilters.</span>yceu
+            <span class="apidocSignatureSpan">(s)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.xss-filters._privFilters.yceud">
+            function <span class="apidocSignatureSpan">xss-filters._privFilters.</span>yceud
+            <span class="apidocSignatureSpan">(s)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.xss-filters._privFilters.yceus">
+            function <span class="apidocSignatureSpan">xss-filters._privFilters.</span>yceus
+            <span class="apidocSignatureSpan">(s)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.xss-filters._privFilters.yceuu">
+            function <span class="apidocSignatureSpan">xss-filters._privFilters.</span>yceuu
+            <span class="apidocSignatureSpan">(s)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.xss-filters._privFilters.yd">
+            function <span class="apidocSignatureSpan">xss-filters._privFilters.</span>yd
+            <span class="apidocSignatureSpan">(s)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.xss-filters._privFilters.yu">
+            function <span class="apidocSignatureSpan">xss-filters._privFilters.</span>yu
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.xss-filters._privFilters.yubl">
+            function <span class="apidocSignatureSpan">xss-filters._privFilters.</span>yubl
+            <span class="apidocSignatureSpan">(s)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.xss-filters._privFilters.yublf">
+            function <span class="apidocSignatureSpan">xss-filters._privFilters.</span>yublf
+            <span class="apidocSignatureSpan">(s)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.xss-filters._privFilters.yuc">
+            function <span class="apidocSignatureSpan">xss-filters._privFilters.</span>yuc
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.xss-filters._privFilters.yufull">
+            function <span class="apidocSignatureSpan">xss-filters._privFilters.</span>yufull
+            <span class="apidocSignatureSpan">(s)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.xss-filters._privFilters.yup">
+            function <span class="apidocSignatureSpan">xss-filters._privFilters.</span>yup
+            <span class="apidocSignatureSpan">(s)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.xss-filters" id="apidoc.module.xss-filters">module xss-filters</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.xss-filters._getPrivFilters" id="apidoc.element.xss-filters._getPrivFilters">
+        function <span class="apidocSignatureSpan">xss-filters.</span>_getPrivFilters
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_getPrivFilters = function () {
+
+    var LT     = /&#x3c;/g,
+        QUOT   = /&#x22;/g,
+        SQUOT  = /&#x27;/g,
+        AMP    = /&#x26;/g,
+        NULL   = /\x00/g,
+        SPECIAL_ATTR_VALUE_UNQUOTED_CHARS = /(?:^$|[\x00\x09-\x0D &#x22;&#x27;`=&#x3c;&#x3e;])/g,
+        SPECIAL_HTML_CHARS = /[&#x26;&#x3c;&#x3e;&#x22;&#x27;`]/g,
+        SPECIAL_COMMENT_CHARS = /(?:\x00|^-*!?&#x3e;|--!?&#x3e;|--?!?$|\]&#x3e;|\]$)/g;
+
+    // CSS sensitive chars: ()&#x22;&#x27;/,!*@{}:;
+    // By CSS: (Tab|NewLine|colon|semi|lpar|rpar|apos|sol|comma|excl|ast|midast);|(quot|QUOT)
+    // By URI_PROTOCOL: (Tab|NewLine);
+    var SENSITIVE_HTML_ENTITIES = /&#x26;(?:#([xX][0-9A-Fa-f]+|\d+);?|(Tab|NewLine|colon|semi|lpar|rpar|apos|sol|comma|excl|ast|midast
+|ensp|emsp|thinsp);|(nbsp|amp|AMP|lt|LT|gt|GT|quot|QUOT);?)/g,
+        SENSITIVE_NAMED_REF_MAP = {Tab: &#x27;\t&#x27;, NewLine: &#x27;\n&#x27;, colon: &#x27;:&#x27;, semi: &#x27;;&#x27;, lpar: &#x27;(&#x27;, rpar: &#x27;)&#x27;, apos: &#x27;\&#x27;&#x27;, sol: &#x27;/&#x27;,
+comma: &#x27;,&#x27;, excl: &#x27;!&#x27;, ast: &#x27;*&#x27;, midast: &#x27;*&#x27;, ensp: &#x27;\u2002&#x27;, emsp: &#x27;\u2003&#x27;, thinsp: &#x27;\u2009&#x27;, nbsp: &#x27;\xA0&#x27;, amp: &#x27;&#x26;&#x27;, lt: &#x27;&#x3c;&#x27;, gt: &#x27;&#x3e;&#x27;, quot: &#x27;&#x22;&#x27;, QUOT: &#x27;&#x22;&#x27;};
+
+    // var CSS_VALID_VALUE =
+    //     /^(?:
+    //     (?!-*expression)#?[-\w]+
+    //     |[+-]?(?:\d+|\d*\.\d+)(?:em|ex|ch|rem|px|mm|cm|in|pt|pc|%|vh|vw|vmin|vmax)?
+    //     |!important
+    //     | //empty
+    //     )$/i;
+    var CSS_VALID_VALUE = /^(?:(?!-*expression)#?[-\w]+|[+-]?(?:\d+|\d*\.\d+)(?:r?em|ex|ch|cm|mm|in|px|pt|pc|%|vh|vw|vmin|vmax)?|!
+important|)$/i,
+        // TODO: prevent double css escaping by not encoding \ again, but this may require CSS decoding
+        // \x7F and \x01-\x1F less \x09 are for Safari 5.0, added []{}/* for unbalanced quote
+        CSS_DOUBLE_QUOTED_CHARS = /[\x00-\x1F\x7F\[\]{}\\&#x22;]/g,
+        CSS_SINGLE_QUOTED_CHARS = /[\x00-\x1F\x7F\[\]{}\\&#x27;]/g,
+        // (, \u207D and \u208D can be used in background: &#x27;url(...)&#x27; in IE, assumed all \ chars are encoded by QUOTED_CHARS, and
+ null is already replaced with\uFFFD
+        // otherwise, use this CSS_BLACKLIST instead (enhance it with url matching): /(?:\\?\(|[\u207D\u208D]|\\0{0,4}28 ?|\\0{0
+,2}20[78][Dd] ?)+/g
+        CSS_BLACKLIST = /url[\(\u207D\u208D]+/g,
+        // this assumes encodeURI() and encodeURIComponent() has escaped 1-32, 127 for IE8
+        CSS_UNQUOTED_URL = /[&#x27;\(\)]/g; // &#x22; \ treated by encodeURI()
+
+    // Given a full URI, need to support &#x22;[&#x22; ( IPv6address ) &#x22;]&#x22; in URI as per RFC3986
+    // Reference: https://tools.ietf.org/html/rfc3986
+    var URL_IPV6 = /\/\/%5[Bb]([A-Fa-f0-9:]+)%5[Dd]/;
+
+
+    // Reference: http://shazzer.co.uk/database/All/characters-allowd-in-html-entities
+    // Reference: http://shazzer.co.uk/vector/Characters-allowed-after-ampersand-in-named-character-references
+    // Reference: http://shazzer.co.uk/database/All/Characters-before-javascript-uri
+    // Reference: http://shazzer.co.uk/database/All/Characters-after-javascript-uri
+    // Reference: https://html.spec.whatwg.org/multipage/syntax.html#consume-a-character-reference
+    // Reference for named characters: https://html.spec.whatwg.org/multipage/entities.json
+    var URI_BLACKLIST_PROTOCOLS = {&#x27;javascript&#x27;:1, &#x27;data&#x27;:1, &#x27;vbscript&#x27;:1, &#x27;mhtml&#x27;:1, &#x27;x-schema&#x27;:1},
+        URI_PROTOCOL_COLON = /(?::|&#x26;#[xX]0*3[aA];?|&#x26;#0*58;?|&#x26;colon;)/,
+        URI_PROTOCOL_WHITESPACES = /(?:^[\x00-\x20]+|[\t\n\r\x00]+)/g,
+        URI_PROTOCOL_NAMED_REF_MAP = {Tab: &#x27;\t&#x27;, NewLine: &#x27;\n&#x27;};
+
+    var x,
+        strReplace = function (s, regexp, callback) {
+            return s === undefined ? &#x27;undefined&#x27;
+                    : s === null            ? &#x27;null&#x27;
+                    : s.toString().replace(regexp, callback);
+        },
+        fromCodePoint = String.fromCodePoint || function(codePoint) {
+            if (arguments.length === 0) {
+                return &#x27;&#x27;;
+            }
+            if (codePoint &#x3c;= 0xFFFF) { // BMP code point
+                return String.fromCharCode(codePoint);
+            }
+
+            // Astral code point; split in surrogate halves
+            // http://mathiasbynens.be/notes/javascript-encoding#surrogate-formulae
+            codePoint -= 0x10000;
+            return String.fromCharCode((codePoint &#x3e;&#x3e; 10) + 0xD800, (codePoint % 0x400) + 0xDC00);
+        };
+
+
+    fun ...</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.xss-filters.inDoubleQuotedAttr" id="apidoc.element.xss-filters.inDoubleQuotedAttr">
+        function <span class="apidocSignatureSpan">xss-filters.</span>inDoubleQuotedAttr
+        <span class="apidocSignatureSpan">(s)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">inDoubleQuotedAttr = function (s) {
+    return strReplace(s, QUOT, &#x27;&#x26;quot;&#x27;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.xss-filters.inHTMLComment" id="apidoc.element.xss-filters.inHTMLComment">
+        function <span class="apidocSignatureSpan">xss-filters.</span>inHTMLComment
+        <span class="apidocSignatureSpan">(s)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">inHTMLComment = function (s) {
+    return strReplace(s, SPECIAL_COMMENT_CHARS, function(m){
+        return m === &#x27;\x00&#x27; ? &#x27;\uFFFD&#x27;
+            : m === &#x27;--!&#x27; || m === &#x27;--&#x27; || m === &#x27;-&#x27; || m === &#x27;]&#x27; ? m + &#x27; &#x27;
+            :/*
+            :  m === &#x27;]&#x3e;&#x27;   ? &#x27;] &#x3e;&#x27;
+            :  m === &#x27;--&#x3e;&#x27;  ? &#x27;-- &#x3e;&#x27;
+            :  m === &#x27;--!&#x3e;&#x27; ? &#x27;--! &#x3e;&#x27;
+            : /-*!?&#x3e;/.test(m) ? */ m.slice(0, -1) + &#x27; &#x3e;&#x27;;
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.xss-filters.inHTMLData" id="apidoc.element.xss-filters.inHTMLData">
+        function <span class="apidocSignatureSpan">xss-filters.</span>inHTMLData
+        <span class="apidocSignatureSpan">(s)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">inHTMLData = function (s) {
+    return strReplace(s, LT, &#x27;&#x26;lt;&#x27;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```javascript
+var express = require(&#x27;express&#x27;);
+var app = express();
+var xssFilters = require(&#x27;xss-filters&#x27;);
+
+app.get(&#x27;/&#x27;, function(req, res){
+  var firstname = req.query.firstname; //an untrusted input collected from user
+  res.send(&#x27;&#x3c;h1&#x3e; Hello, &#x27; + xssFilters.<span class="apidocCodeKeywordSpan">inHTMLData</span>(firstname) + &#
+x27;!&#x3c;/h1&#x3e;&#x27;);
+});
+
+app.listen(3000);
+```
+
+### Client-side (browser)
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.xss-filters.inSingleQuotedAttr" id="apidoc.element.xss-filters.inSingleQuotedAttr">
+        function <span class="apidocSignatureSpan">xss-filters.</span>inSingleQuotedAttr
+        <span class="apidocSignatureSpan">(s)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">inSingleQuotedAttr = function (s) {
+    return strReplace(s, SQUOT, &#x27;&#x26;#39;&#x27;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.xss-filters.inUnQuotedAttr" id="apidoc.element.xss-filters.inUnQuotedAttr">
+        function <span class="apidocSignatureSpan">xss-filters.</span>inUnQuotedAttr
+        <span class="apidocSignatureSpan">(s)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">inUnQuotedAttr = function (s) {
+    return strReplace(s, SPECIAL_ATTR_VALUE_UNQUOTED_CHARS, function (m) {
+        return m === &#x27;\t&#x27;   ? &#x27;&#x26;#9;&#x27;  // in hex: 09
+            :  m === &#x27;\n&#x27;   ? &#x27;&#x26;#10;&#x27; // in hex: 0A
+            :  m === &#x27;\x0B&#x27; ? &#x27;&#x26;#11;&#x27; // in hex: 0B  for IE. IE&#x3c;9 \v equals v, so use \x0B instead
+            :  m === &#x27;\f&#x27;   ? &#x27;&#x26;#12;&#x27; // in hex: 0C
+            :  m === &#x27;\r&#x27;   ? &#x27;&#x26;#13;&#x27; // in hex: 0D
+            :  m === &#x27; &#x27;    ? &#x27;&#x26;#32;&#x27; // in hex: 20
+            :  m === &#x27;=&#x27;    ? &#x27;&#x26;#61;&#x27; // in hex: 3D
+            :  m === &#x27;&#x3c;&#x27;    ? &#x27;&#x26;lt;&#x27;
+            :  m === &#x27;&#x3e;&#x27;    ? &#x27;&#x26;gt;&#x27;
+            :  m === &#x27;&#x22;&#x27;    ? &#x27;&#x26;quot;&#x27;
+            :  m === &#x22;&#x27;&#x22;    ? &#x27;&#x26;#39;&#x27;
+            :  m === &#x27;`&#x27;    ? &#x27;&#x26;#96;&#x27;
+            : /*empty or null*/ &#x27;\uFFFD&#x27;;
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.xss-filters.uriComponentInDoubleQuotedAttr" id="apidoc.element.xss-filters.uriComponentInDoubleQuotedAttr">
+        function <span class="apidocSignatureSpan">xss-filters.</span>uriComponentInDoubleQuotedAttr
+        <span class="apidocSignatureSpan">(s)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">uriComponentInDoubleQuotedAttr = function (s) {
+    return privFilters.yavd(privFilters.yuc(s));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.xss-filters.uriComponentInHTMLComment" id="apidoc.element.xss-filters.uriComponentInHTMLComment">
+        function <span class="apidocSignatureSpan">xss-filters.</span>uriComponentInHTMLComment
+        <span class="apidocSignatureSpan">(s)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">uriComponentInHTMLComment = function (s) {
+    return privFilters.yc(privFilters.yuc(s));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.xss-filters.uriComponentInHTMLData" id="apidoc.element.xss-filters.uriComponentInHTMLData">
+        function <span class="apidocSignatureSpan">xss-filters.</span>uriComponentInHTMLData
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function encodeURIComponent() { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.xss-filters.uriComponentInSingleQuotedAttr" id="apidoc.element.xss-filters.uriComponentInSingleQuotedAttr">
+        function <span class="apidocSignatureSpan">xss-filters.</span>uriComponentInSingleQuotedAttr
+        <span class="apidocSignatureSpan">(s)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">uriComponentInSingleQuotedAttr = function (s) {
+    return privFilters.yavs(privFilters.yuc(s));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.xss-filters.uriComponentInUnQuotedAttr" id="apidoc.element.xss-filters.uriComponentInUnQuotedAttr">
+        function <span class="apidocSignatureSpan">xss-filters.</span>uriComponentInUnQuotedAttr
+        <span class="apidocSignatureSpan">(s)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">uriComponentInUnQuotedAttr = function (s) {
+    return privFilters.yavu(privFilters.yuc(s));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.xss-filters.uriFragmentInDoubleQuotedAttr" id="apidoc.element.xss-filters.uriFragmentInDoubleQuotedAttr">
+        function <span class="apidocSignatureSpan">xss-filters.</span>uriFragmentInDoubleQuotedAttr
+        <span class="apidocSignatureSpan">(s)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">uriFragmentInDoubleQuotedAttr = function (s) {
+    return privFilters.yubl(privFilters.yavd(privFilters.yuc(s)));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.xss-filters.uriFragmentInHTMLComment" id="apidoc.element.xss-filters.uriFragmentInHTMLComment">
+        function <span class="apidocSignatureSpan">xss-filters.</span>uriFragmentInHTMLComment
+        <span class="apidocSignatureSpan">(s)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">uriFragmentInHTMLComment = function (s) {
+    return privFilters.yc(privFilters.yuc(s));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.xss-filters.uriFragmentInHTMLData" id="apidoc.element.xss-filters.uriFragmentInHTMLData">
+        function <span class="apidocSignatureSpan">xss-filters.</span>uriFragmentInHTMLData
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function encodeURIComponent() { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.xss-filters.uriFragmentInSingleQuotedAttr" id="apidoc.element.xss-filters.uriFragmentInSingleQuotedAttr">
+        function <span class="apidocSignatureSpan">xss-filters.</span>uriFragmentInSingleQuotedAttr
+        <span class="apidocSignatureSpan">(s)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">uriFragmentInSingleQuotedAttr = function (s) {
+    return privFilters.yubl(privFilters.yavs(privFilters.yuc(s)));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.xss-filters.uriFragmentInUnQuotedAttr" id="apidoc.element.xss-filters.uriFragmentInUnQuotedAttr">
+        function <span class="apidocSignatureSpan">xss-filters.</span>uriFragmentInUnQuotedAttr
+        <span class="apidocSignatureSpan">(s)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">uriFragmentInUnQuotedAttr = function (s) {
+    return privFilters.yubl(privFilters.yavu(privFilters.yuc(s)));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.xss-filters.uriInDoubleQuotedAttr" id="apidoc.element.xss-filters.uriInDoubleQuotedAttr">
+        function <span class="apidocSignatureSpan">xss-filters.</span>uriInDoubleQuotedAttr
+        <span class="apidocSignatureSpan">(s)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">uriInDoubleQuotedAttr = function (s) {
+    return uriInAttr(s, privFilters.yavd);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.xss-filters.uriInHTMLComment" id="apidoc.element.xss-filters.uriInHTMLComment">
+        function <span class="apidocSignatureSpan">xss-filters.</span>uriInHTMLComment
+        <span class="apidocSignatureSpan">(s)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">uriInHTMLComment = function (s) {
+    return privFilters.yc(privFilters.yufull(s));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.xss-filters.uriInHTMLData" id="apidoc.element.xss-filters.uriInHTMLData">
+        function <span class="apidocSignatureSpan">xss-filters.</span>uriInHTMLData
+        <span class="apidocSignatureSpan">(s)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">uriInHTMLData = function (s) {
+    return x.yu(s).replace(URL_IPV6, function(m, p) {
+        return &#x27;//[&#x27; + p + &#x27;]&#x27;;
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+[dep-status]: https://david-dm.org/yahoo/xss-filters
+[dep-badge]: https://img.shields.io/david/yahoo/xss-filters.svg?style=flat-square
+
+## Goals
+
+- **More Secure.** Context-dependent output filters that are developer-friendly. It is safe to apply these filters like so:
+
+`document.write(&#x22;&#x3c;a href=&#x22; + xssFilters.uriInUnQuotedAttr(url) + &#x22;&#x3e;&#x22; + xssFilters.<span class="apidocCodeKeywordSpan
+">uriInHTMLData</span>(url) + &#x22;&#x3c;/a&#x3e;&#x22;);`
+
+In this example, the traditional wisdom of blindly escaping some special html entity characters (`&#x26;` `&#x3c;` `&#x3e;` `&#x27
+;` `&#x22;` `` ` ``) would not stop XSS (e.g., when `url` is equal to `javascript:alert(1)` or ` onclick=alert(1)`).
+
+- **Faster with Just Sufficient Encoding.** Encode the *minimal* set of characters to thwart JavaScript executions, thus preventing
+ XSS attacks while keeping most characters intact. Compared to the traditional blindly escape filter, our filters are [up to two
+ times faster](http://jsperf.com/context-sensitive-vs-blindly-escape), and there is no more double-encoding problems such as &#x27
+;&#x26;amp;amp;lt;&#x27;!!
+
+![alt Visualizing the concept of just sufficient encoding](https://ierg4210.github.io/web/images/xss-filters/xss-filters.png)
+Figure 1. &#x22;Just sufficient&#x22; encoding based on the HTML5 spec.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.xss-filters.uriInSingleQuotedAttr" id="apidoc.element.xss-filters.uriInSingleQuotedAttr">
+        function <span class="apidocSignatureSpan">xss-filters.</span>uriInSingleQuotedAttr
+        <span class="apidocSignatureSpan">(s)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">uriInSingleQuotedAttr = function (s) {
+    return uriInAttr(s, privFilters.yavs);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.xss-filters.uriInUnQuotedAttr" id="apidoc.element.xss-filters.uriInUnQuotedAttr">
+        function <span class="apidocSignatureSpan">xss-filters.</span>uriInUnQuotedAttr
+        <span class="apidocSignatureSpan">(s)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">uriInUnQuotedAttr = function (s) {
+    return uriInAttr(s, privFilters.yavu);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+[dep-status]: https://david-dm.org/yahoo/xss-filters
+[dep-badge]: https://img.shields.io/david/yahoo/xss-filters.svg?style=flat-square
+
+## Goals
+
+- **More Secure.** Context-dependent output filters that are developer-friendly. It is safe to apply these filters like so:
+
+`document.write(&#x22;&#x3c;a href=&#x22; + xssFilters.<span class="apidocCodeKeywordSpan">uriInUnQuotedAttr</span>(url) + &#x22
+;&#x3e;&#x22; + xssFilters.uriInHTMLData(url) + &#x22;&#x3c;/a&#x3e;&#x22;);`
+
+In this example, the traditional wisdom of blindly escaping some special html entity characters (`&#x26;` `&#x3c;` `&#x3e;` `&#x27
+;` `&#x22;` `` ` ``) would not stop XSS (e.g., when `url` is equal to `javascript:alert(1)` or ` onclick=alert(1)`).
+
+- **Faster with Just Sufficient Encoding.** Encode the *minimal* set of characters to thwart JavaScript executions, thus preventing
+ XSS attacks while keeping most characters intact. Compared to the traditional blindly escape filter, our filters are [up to two
+ times faster](http://jsperf.com/context-sensitive-vs-blindly-escape), and there is no more double-encoding problems such as &#x27
+;&#x26;amp;amp;lt;&#x27;!!
+
+![alt Visualizing the concept of just sufficient encoding](https://ierg4210.github.io/web/images/xss-filters/xss-filters.png)
+Figure 1. &#x22;Just sufficient&#x22; encoding based on the HTML5 spec.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.xss-filters.uriPathInDoubleQuotedAttr" id="apidoc.element.xss-filters.uriPathInDoubleQuotedAttr">
+        function <span class="apidocSignatureSpan">xss-filters.</span>uriPathInDoubleQuotedAttr
+        <span class="apidocSignatureSpan">(s)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">uriPathInDoubleQuotedAttr = function (s) {
+    return uriInAttr(s, privFilters.yavd, privFilters.yu);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.xss-filters.uriPathInHTMLComment" id="apidoc.element.xss-filters.uriPathInHTMLComment">
+        function <span class="apidocSignatureSpan">xss-filters.</span>uriPathInHTMLComment
+        <span class="apidocSignatureSpan">(s)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">uriPathInHTMLComment = function (s) {
+    return privFilters.yc(privFilters.yu(s));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.xss-filters.uriPathInHTMLData" id="apidoc.element.xss-filters.uriPathInHTMLData">
+        function <span class="apidocSignatureSpan">xss-filters.</span>uriPathInHTMLData
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function encodeURI() { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.xss-filters.uriPathInSingleQuotedAttr" id="apidoc.element.xss-filters.uriPathInSingleQuotedAttr">
+        function <span class="apidocSignatureSpan">xss-filters.</span>uriPathInSingleQuotedAttr
+        <span class="apidocSignatureSpan">(s)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">uriPathInSingleQuotedAttr = function (s) {
+    return uriInAttr(s, privFilters.yavs, privFilters.yu);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.xss-filters.uriPathInUnQuotedAttr" id="apidoc.element.xss-filters.uriPathInUnQuotedAttr">
+        function <span class="apidocSignatureSpan">xss-filters.</span>uriPathInUnQuotedAttr
+        <span class="apidocSignatureSpan">(s)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">uriPathInUnQuotedAttr = function (s) {
+    return uriInAttr(s, privFilters.yavu, privFilters.yu);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.xss-filters.uriQueryInDoubleQuotedAttr" id="apidoc.element.xss-filters.uriQueryInDoubleQuotedAttr">
+        function <span class="apidocSignatureSpan">xss-filters.</span>uriQueryInDoubleQuotedAttr
+        <span class="apidocSignatureSpan">(s)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">uriQueryInDoubleQuotedAttr = function (s) {
+    return uriInAttr(s, privFilters.yavd, privFilters.yu);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.xss-filters.uriQueryInHTMLComment" id="apidoc.element.xss-filters.uriQueryInHTMLComment">
+        function <span class="apidocSignatureSpan">xss-filters.</span>uriQueryInHTMLComment
+        <span class="apidocSignatureSpan">(s)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">uriQueryInHTMLComment = function (s) {
+    return privFilters.yc(privFilters.yu(s));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.xss-filters.uriQueryInHTMLData" id="apidoc.element.xss-filters.uriQueryInHTMLData">
+        function <span class="apidocSignatureSpan">xss-filters.</span>uriQueryInHTMLData
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function encodeURI() { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.xss-filters.uriQueryInSingleQuotedAttr" id="apidoc.element.xss-filters.uriQueryInSingleQuotedAttr">
+        function <span class="apidocSignatureSpan">xss-filters.</span>uriQueryInSingleQuotedAttr
+        <span class="apidocSignatureSpan">(s)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">uriQueryInSingleQuotedAttr = function (s) {
+    return uriInAttr(s, privFilters.yavs, privFilters.yu);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.xss-filters.uriQueryInUnQuotedAttr" id="apidoc.element.xss-filters.uriQueryInUnQuotedAttr">
+        function <span class="apidocSignatureSpan">xss-filters.</span>uriQueryInUnQuotedAttr
+        <span class="apidocSignatureSpan">(s)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">uriQueryInUnQuotedAttr = function (s) {
+    return uriInAttr(s, privFilters.yavu, privFilters.yu);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.xss-filters._privFilters" id="apidoc.module.xss-filters._privFilters">module xss-filters._privFilters</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.xss-filters._privFilters.d" id="apidoc.element.xss-filters._privFilters.d">
+        function <span class="apidocSignatureSpan">xss-filters._privFilters.</span>d
+        <span class="apidocSignatureSpan">(s, namedRefMap, reNamedRef, skipReplacement)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function htmlDecode(s, namedRefMap, reNamedRef, skipReplacement) {
+
+    namedRefMap = namedRefMap || SENSITIVE_NAMED_REF_MAP;
+    reNamedRef = reNamedRef || SENSITIVE_HTML_ENTITIES;
+
+    function regExpFunction(m, num, named, named1) {
+        if (num) {
+            num = Number(num[0] &#x3c;= &#x27;9&#x27; ? num : &#x27;0&#x27; + num);
+            // switch(num) {
+            //     case 0x80: return &#x27;\u20AC&#x27;;  // EURO SIGN (€)
+            //     case 0x82: return &#x27;\u201A&#x27;;  // SINGLE LOW-9 QUOTATION MARK (‚)
+            //     case 0x83: return &#x27;\u0192&#x27;;  // LATIN SMALL LETTER F WITH HOOK (ƒ)
+            //     case 0x84: return &#x27;\u201E&#x27;;  // DOUBLE LOW-9 QUOTATION MARK („)
+            //     case 0x85: return &#x27;\u2026&#x27;;  // HORIZONTAL ELLIPSIS (…)
+            //     case 0x86: return &#x27;\u2020&#x27;;  // DAGGER (†)
+            //     case 0x87: return &#x27;\u2021&#x27;;  // DOUBLE DAGGER (‡)
+            //     case 0x88: return &#x27;\u02C6&#x27;;  // MODIFIER LETTER CIRCUMFLEX ACCENT (ˆ)
+            //     case 0x89: return &#x27;\u2030&#x27;;  // PER MILLE SIGN (‰)
+            //     case 0x8A: return &#x27;\u0160&#x27;;  // LATIN CAPITAL LETTER S WITH CARON (Š)
+            //     case 0x8B: return &#x27;\u2039&#x27;;  // SINGLE LEFT-POINTING ANGLE QUOTATION MARK (‹)
+            //     case 0x8C: return &#x27;\u0152&#x27;;  // LATIN CAPITAL LIGATURE OE (Œ)
+            //     case 0x8E: return &#x27;\u017D&#x27;;  // LATIN CAPITAL LETTER Z WITH CARON (Ž)
+            //     case 0x91: return &#x27;\u2018&#x27;;  // LEFT SINGLE QUOTATION MARK (‘)
+            //     case 0x92: return &#x27;\u2019&#x27;;  // RIGHT SINGLE QUOTATION MARK (’)
+            //     case 0x93: return &#x27;\u201C&#x27;;  // LEFT DOUBLE QUOTATION MARK (“)
+            //     case 0x94: return &#x27;\u201D&#x27;;  // RIGHT DOUBLE QUOTATION MARK (”)
+            //     case 0x95: return &#x27;\u2022&#x27;;  // BULLET (•)
+            //     case 0x96: return &#x27;\u2013&#x27;;  // EN DASH (–)
+            //     case 0x97: return &#x27;\u2014&#x27;;  // EM DASH (—)
+            //     case 0x98: return &#x27;\u02DC&#x27;;  // SMALL TILDE (˜)
+            //     case 0x99: return &#x27;\u2122&#x27;;  // TRADE MARK SIGN (™)
+            //     case 0x9A: return &#x27;\u0161&#x27;;  // LATIN SMALL LETTER S WITH CARON (š)
+            //     case 0x9B: return &#x27;\u203A&#x27;;  // SINGLE RIGHT-POINTING ANGLE QUOTATION MARK (›)
+            //     case 0x9C: return &#x27;\u0153&#x27;;  // LATIN SMALL LIGATURE OE (œ)
+            //     case 0x9E: return &#x27;\u017E&#x27;;  // LATIN SMALL LETTER Z WITH CARON (ž)
+            //     case 0x9F: return &#x27;\u0178&#x27;;  // LATIN CAPITAL LETTER Y WITH DIAERESIS (Ÿ)
+            // }
+            // // num &#x3e;= 0xD800 &#x26;&#x26; num &#x3c;= 0xDFFF, and 0x0D is separately handled, as it doesn&#x27;t fall into the range of x.pec()
+            // return (num &#x3e;= 0xD800 &#x26;&#x26; num &#x3c;= 0xDFFF) || num === 0x0D ? &#x27;\uFFFD&#x27; : x.frCoPt(num);
+
+            return skipReplacement ? fromCodePoint(num)
+                    : num === 0x80 ? &#x27;\u20AC&#x27;  // EURO SIGN (€)
+                    : num === 0x82 ? &#x27;\u201A&#x27;  // SINGLE LOW-9 QUOTATION MARK (‚)
+                    : num === 0x83 ? &#x27;\u0192&#x27;  // LATIN SMALL LETTER F WITH HOOK (ƒ)
+                    : num === 0x84 ? &#x27;\u201E&#x27;  // DOUBLE LOW-9 QUOTATION MARK („)
+                    : num === 0x85 ? &#x27;\u2026&#x27;  // HORIZONTAL ELLIPSIS (…)
+                    : num === 0x86 ? &#x27;\u2020&#x27;  // DAGGER (†)
+                    : num === 0x87 ? &#x27;\u2021&#x27;  // DOUBLE DAGGER (‡)
+                    : num === 0x88 ? &#x27;\u02C6&#x27;  // MODIFIER LETTER CIRCUMFLEX ACCENT (ˆ)
+                    : num === 0x89 ? &#x27;\u2030&#x27;  // PER MILLE SIGN (‰)
+                    : num === 0x8A ? &#x27;\u0160&#x27;  // LATIN CAPITAL LETTER S WITH CARON (Š)
+                    : num === 0x8B ? &#x27;\u2039&#x27;  // SINGLE LEFT-POINTING ANGLE QUOTATION MARK (‹)
+                    : num === 0x8C ? &#x27;\u0152&#x27;  // LATIN CAPITAL LIGATURE OE (Œ)
+                    : num === 0x8E ? &#x27;\u017D&#x27;  // LATIN CAPITAL LETTER Z WITH CARON (Ž)
+                    : num === 0x91 ? &#x27;\u2018&#x27;  // LEFT SINGLE QUOTATION MARK (‘)
+                    : num === 0x92 ? &#x27;\u2019&#x27;  // RIGHT SINGLE QUOTATION MARK (’)
+                    : num === 0x93 ? &#x27;\u201C&#x27;  // LEFT DOUBLE QUOTATION MARK (“)
+                    : num === 0x94 ? &#x27;\u20 ...</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.xss-filters._privFilters.frCoPt" id="apidoc.element.xss-filters._privFilters.frCoPt">
+        function <span class="apidocSignatureSpan">xss-filters._privFilters.</span>frCoPt
+        <span class="apidocSignatureSpan">(num)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">frCoPt = function (num) {
+    return num === undefined || num === null ? &#x27;&#x27; :
+        !isFinite(num = Number(num)) || // `NaN`, `+Infinity`, or `-Infinity`
+        num &#x3c;= 0 ||                     // not a valid Unicode code point
+        num &#x3e; 0x10FFFF ||               // not a valid Unicode code point
+        // Math.floor(num) != num ||
+
+        (num &#x3e;= 0x01 &#x26;&#x26; num &#x3c;= 0x08) ||
+        (num &#x3e;= 0x0E &#x26;&#x26; num &#x3c;= 0x1F) ||
+        (num &#x3e;= 0x7F &#x26;&#x26; num &#x3c;= 0x9F) ||
+        (num &#x3e;= 0xFDD0 &#x26;&#x26; num &#x3c;= 0xFDEF) ||
+
+         num === 0x0B ||
+        (num &#x26; 0xFFFF) === 0xFFFF ||
+        (num &#x26; 0xFFFF) === 0xFFFE ? &#x27;\uFFFD&#x27; : fromCodePoint(num);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.xss-filters._privFilters.y" id="apidoc.element.xss-filters._privFilters.y">
+        function <span class="apidocSignatureSpan">xss-filters._privFilters.</span>y
+        <span class="apidocSignatureSpan">(s)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">y = function (s) {
+    return strReplace(s, SPECIAL_HTML_CHARS, function (m) {
+        return m === &#x27;&#x26;&#x27; ? &#x27;&#x26;amp;&#x27;
+            :  m === &#x27;&#x3c;&#x27; ? &#x27;&#x26;lt;&#x27;
+            :  m === &#x27;&#x3e;&#x27; ? &#x27;&#x26;gt;&#x27;
+            :  m === &#x27;&#x22;&#x27; ? &#x27;&#x26;quot;&#x27;
+            :  m === &#x22;&#x27;&#x22; ? &#x27;&#x26;#39;&#x27;
+            :  /*m === &#x27;`&#x27;*/ &#x27;&#x26;#96;&#x27;;       // in hex: 60
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.xss-filters._privFilters.ya" id="apidoc.element.xss-filters._privFilters.ya">
+        function <span class="apidocSignatureSpan">xss-filters._privFilters.</span>ya
+        <span class="apidocSignatureSpan">(s)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">ya = function (s) {
+    return strReplace(s, AMP, &#x27;&#x26;amp;&#x27;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.xss-filters._privFilters.yavd" id="apidoc.element.xss-filters._privFilters.yavd">
+        function <span class="apidocSignatureSpan">xss-filters._privFilters.</span>yavd
+        <span class="apidocSignatureSpan">(s)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">yavd = function (s) {
+    return strReplace(s, QUOT, &#x27;&#x26;quot;&#x27;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.xss-filters._privFilters.yavs" id="apidoc.element.xss-filters._privFilters.yavs">
+        function <span class="apidocSignatureSpan">xss-filters._privFilters.</span>yavs
+        <span class="apidocSignatureSpan">(s)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">yavs = function (s) {
+    return strReplace(s, SQUOT, &#x27;&#x26;#39;&#x27;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.xss-filters._privFilters.yavu" id="apidoc.element.xss-filters._privFilters.yavu">
+        function <span class="apidocSignatureSpan">xss-filters._privFilters.</span>yavu
+        <span class="apidocSignatureSpan">(s)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">yavu = function (s) {
+    return strReplace(s, SPECIAL_ATTR_VALUE_UNQUOTED_CHARS, function (m) {
+        return m === &#x27;\t&#x27;   ? &#x27;&#x26;#9;&#x27;  // in hex: 09
+            :  m === &#x27;\n&#x27;   ? &#x27;&#x26;#10;&#x27; // in hex: 0A
+            :  m === &#x27;\x0B&#x27; ? &#x27;&#x26;#11;&#x27; // in hex: 0B  for IE. IE&#x3c;9 \v equals v, so use \x0B instead
+            :  m === &#x27;\f&#x27;   ? &#x27;&#x26;#12;&#x27; // in hex: 0C
+            :  m === &#x27;\r&#x27;   ? &#x27;&#x26;#13;&#x27; // in hex: 0D
+            :  m === &#x27; &#x27;    ? &#x27;&#x26;#32;&#x27; // in hex: 20
+            :  m === &#x27;=&#x27;    ? &#x27;&#x26;#61;&#x27; // in hex: 3D
+            :  m === &#x27;&#x3c;&#x27;    ? &#x27;&#x26;lt;&#x27;
+            :  m === &#x27;&#x3e;&#x27;    ? &#x27;&#x26;gt;&#x27;
+            :  m === &#x27;&#x22;&#x27;    ? &#x27;&#x26;quot;&#x27;
+            :  m === &#x22;&#x27;&#x22;    ? &#x27;&#x26;#39;&#x27;
+            :  m === &#x27;`&#x27;    ? &#x27;&#x26;#96;&#x27;
+            : /*empty or null*/ &#x27;\uFFFD&#x27;;
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.xss-filters._privFilters.yc" id="apidoc.element.xss-filters._privFilters.yc">
+        function <span class="apidocSignatureSpan">xss-filters._privFilters.</span>yc
+        <span class="apidocSignatureSpan">(s)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">yc = function (s) {
+    return strReplace(s, SPECIAL_COMMENT_CHARS, function(m){
+        return m === &#x27;\x00&#x27; ? &#x27;\uFFFD&#x27;
+            : m === &#x27;--!&#x27; || m === &#x27;--&#x27; || m === &#x27;-&#x27; || m === &#x27;]&#x27; ? m + &#x27; &#x27;
+            :/*
+            :  m === &#x27;]&#x3e;&#x27;   ? &#x27;] &#x3e;&#x27;
+            :  m === &#x27;--&#x3e;&#x27;  ? &#x27;-- &#x3e;&#x27;
+            :  m === &#x27;--!&#x3e;&#x27; ? &#x27;--! &#x3e;&#x27;
+            : /-*!?&#x3e;/.test(m) ? */ m.slice(0, -1) + &#x27; &#x3e;&#x27;;
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.xss-filters._privFilters.yced" id="apidoc.element.xss-filters._privFilters.yced">
+        function <span class="apidocSignatureSpan">xss-filters._privFilters.</span>yced
+        <span class="apidocSignatureSpan">(s)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">yced = function (s) {
+    return cssBlacklist(htmlDecode(s).replace(CSS_DOUBLE_QUOTED_CHARS, cssEncode));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.xss-filters._privFilters.yces" id="apidoc.element.xss-filters._privFilters.yces">
+        function <span class="apidocSignatureSpan">xss-filters._privFilters.</span>yces
+        <span class="apidocSignatureSpan">(s)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">yces = function (s) {
+    return cssBlacklist(htmlDecode(s).replace(CSS_SINGLE_QUOTED_CHARS, cssEncode));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.xss-filters._privFilters.yceu" id="apidoc.element.xss-filters._privFilters.yceu">
+        function <span class="apidocSignatureSpan">xss-filters._privFilters.</span>yceu
+        <span class="apidocSignatureSpan">(s)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">yceu = function (s) {
+    s = htmlDecode(s);
+    return CSS_VALID_VALUE.test(s) ? s : &#x22;;-x:&#x27;&#x22; + cssBlacklist(s.replace(CSS_SINGLE_QUOTED_CHARS, cssEncode)) + &#x22;&#x27;;-v:&#x22;;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.xss-filters._privFilters.yceud" id="apidoc.element.xss-filters._privFilters.yceud">
+        function <span class="apidocSignatureSpan">xss-filters._privFilters.</span>yceud
+        <span class="apidocSignatureSpan">(s)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">yceud = function (s) {
+    return cssUrl(s);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.xss-filters._privFilters.yceus" id="apidoc.element.xss-filters._privFilters.yceus">
+        function <span class="apidocSignatureSpan">xss-filters._privFilters.</span>yceus
+        <span class="apidocSignatureSpan">(s)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">yceus = function (s) {
+    return cssUrl(s).replace(SQUOT, &#x27;\\27 &#x27;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.xss-filters._privFilters.yceuu" id="apidoc.element.xss-filters._privFilters.yceuu">
+        function <span class="apidocSignatureSpan">xss-filters._privFilters.</span>yceuu
+        <span class="apidocSignatureSpan">(s)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">yceuu = function (s) {
+    return cssUrl(s).replace(CSS_UNQUOTED_URL, function (chr) {
+        return  chr === &#x27;\&#x27;&#x27;        ? &#x27;\\27 &#x27; :
+                chr === &#x27;(&#x27;         ? &#x27;%28&#x27; :
+                /* chr === &#x27;)&#x27; ? */   &#x27;%29&#x27;;
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.xss-filters._privFilters.yd" id="apidoc.element.xss-filters._privFilters.yd">
+        function <span class="apidocSignatureSpan">xss-filters._privFilters.</span>yd
+        <span class="apidocSignatureSpan">(s)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">yd = function (s) {
+    return strReplace(s, LT, &#x27;&#x26;lt;&#x27;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.xss-filters._privFilters.yu" id="apidoc.element.xss-filters._privFilters.yu">
+        function <span class="apidocSignatureSpan">xss-filters._privFilters.</span>yu
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function encodeURI() { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.xss-filters._privFilters.yubl" id="apidoc.element.xss-filters._privFilters.yubl">
+        function <span class="apidocSignatureSpan">xss-filters._privFilters.</span>yubl
+        <span class="apidocSignatureSpan">(s)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">yubl = function (s) {
+    return URI_BLACKLIST_PROTOCOLS[x.yup(s)] ? &#x27;x-&#x27; + s : s;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.xss-filters._privFilters.yublf" id="apidoc.element.xss-filters._privFilters.yublf">
+        function <span class="apidocSignatureSpan">xss-filters._privFilters.</span>yublf
+        <span class="apidocSignatureSpan">(s)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">yublf = function (s) {
+    return x.yubl(x.yufull(s));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.xss-filters._privFilters.yuc" id="apidoc.element.xss-filters._privFilters.yuc">
+        function <span class="apidocSignatureSpan">xss-filters._privFilters.</span>yuc
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function encodeURIComponent() { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.xss-filters._privFilters.yufull" id="apidoc.element.xss-filters._privFilters.yufull">
+        function <span class="apidocSignatureSpan">xss-filters._privFilters.</span>yufull
+        <span class="apidocSignatureSpan">(s)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">yufull = function (s) {
+    return x.yu(s).replace(URL_IPV6, function(m, p) {
+        return &#x27;//[&#x27; + p + &#x27;]&#x27;;
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.xss-filters._privFilters.yup" id="apidoc.element.xss-filters._privFilters.yup">
+        function <span class="apidocSignatureSpan">xss-filters._privFilters.</span>yup
+        <span class="apidocSignatureSpan">(s)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">yup = function (s) {
+    s = getProtocol(s.replace(NULL, &#x27;&#x27;));
+    // URI_PROTOCOL_WHITESPACES is required for left trim and remove interim whitespaces
+    return s ? htmlDecode(s, URI_PROTOCOL_NAMED_REF_MAP, null, true).replace(URI_PROTOCOL_WHITESPACES, &#x27;&#x27;).toLowerCase() : null;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
